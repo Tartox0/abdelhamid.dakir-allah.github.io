@@ -766,7 +766,7 @@
           </div>
           <div class="dot-item">
             <div class="dot"></div>
-            <span>Langues : Anglais, Français, Arabe, Swahili (18/20), Mandarin (HSK 1)</span>
+            <span>Langues : Français (Natif), Arabe (Natif), Anglais (Capacité professionnelle complète), Japonais (Notions), Swahili (Notions), Mandarin (Notions)</span>
           </div>
         </div>
       </div>
@@ -781,34 +781,37 @@
       <h2 class="st">Recherche</h2>
     </div>
 
-    <div class="rf rv">
-  <p class="rl">Projet de Recherche Principal · RISE-X</p>
+   <div class="rf rv">
+  <p class="rl">Projet de Recherche Long Terme · RISE-X (S6 - S10)</p>
   <h3>Engineering Emergent Quantum and Excitonic States in Geometrically Engineered 2D Materials</h3>
   
+  <p style="margin-bottom: 16px;">
+    Le projet <strong>RISE-X</strong> est un programme de recherche computationnelle structuré sur une durée de 3 ans. Son objectif principal est de concevoir un cadre prédictif multi-échelle pour comprendre et contrôler les phases quantiques fortement corrélées (supraconductivité, magnétisme, ordre topologique et multiferroïcité) émergeant au sein des matériaux bidimensionnels van der Waals. 
+  </p>
   <p style="margin-bottom: 24px;">
-    Étude théorique et computationnelle des phases fortement corrélées (excitoniques, supraconductrices et magnétiques) émergeant dans les matériaux bidimensionnels par ingénierie géométrique (torsion, empilement et contrainte). Ce projet s'appuie sur l'ancrage formel de la <strong>théorie spectrale des opérateurs de Schrödinger quasi-périodiques</strong>.
+    En s'appuyant sur l'ingénierie géométrique (torsion, empilement et contrainte), la feuille de route vise à établir des règles de conception pour manipuler ces états par l'application de paramètres externes tels que le dopage, les champs électriques ou les déformations mécaniques. L'ancrage mathématique de ces superréseaux et de leurs états émergents est régi formellement par la <strong>théorie spectrale des opérateurs de Schrödinger quasi-périodiques</strong>.
   </p>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 32px;">
     
     <div style="background: var(--bg-2); padding: 20px; border-radius: 4px; border-left: 3px solid var(--gold);">
-      <h4 style="font-family: var(--fh); font-size: 0.95rem; color: var(--cream); margin-bottom: 8px;">1. Base Liaisons Fortes &amp; Wannierisation</h4>
+      <h4 style="font-family: var(--fh); font-size: 0.95rem; color: var(--cream); margin-bottom: 8px;">Jalon I : Base Liaisons Fortes &amp; Wannierisation</h4>
       <p style="font-size: 0.85rem; color: var(--cream-2); line-height: 1.6;">
-        Projection de l'Hamiltonien continu sur une base minimale d'orbitales $2p_z$. Pour concilier un métrique orthogonale ($S=\mathbb{I}$) et la précision <em>ab initio</em>, les paramètres de saut $t_{ij}$ sont extraits par transformation de jauge unitaire via les <strong>Fonctions de Wannier Maximalement Localisées (MLWFs)</strong>, absorbant ainsi les effets de recouvrement.
+        Réduction de l'espace continu par projection LCAO sur une base minimale d'orbitales \(2p_z\). Pour concilier une métrique orthogonale (\(S=\mathbb{I}\)) indispensable à la simulation de grandes super-mailles de Moiré et la précision <em>ab initio</em>, les paramètres de saut \(t_{ij}\) sont extraits par transformation de jauge unitaire via les <strong>Fonctions de Wannier Maximalement Localisées (MLWFs)</strong>, absorbant efficacement les effets de recouvrement et la répulsion de Pauli.
       </p>
     </div>
 
     <div style="background: var(--bg-2); padding: 20px; border-radius: 4px; border-left: 3px solid var(--gold);">
-      <h4 style="font-family: var(--fh); font-size: 0.95rem; color: var(--cream); margin-bottom: 8px;">2. Empilements Multicouches &amp; Aplatissement</h4>
+      <h4 style="font-family: var(--fh); font-size: 0.95rem; color: var(--cream); margin-bottom: 8px;">Jalon II : Criblage des Symétries d'Empilement</h4>
       <p style="font-size: 0.85rem; color: var(--cream-2); line-height: 1.6;">
-        Analyse comparative des symétries d'empilements. Modélisation de la cascade de dimérisation dans le **graphène trilayer rhomboédrique (ABC)** par perturbation du 3ème ordre (Schrieffer-Wolff). Preuve numérique de l'émergence d'une bande cubique ($E \propto q^3$) annihilant la vitesse de groupe et divergeant la densité d'états ($\rho(E) \propto E^{-1/3}$).
+        Modélisation et comparaison des dispersions de basse énergie. Analyse de la cascade de dimérisation dans le **graphène trilayer rhomboédrique (ABC)** via la transformation de Schrieffer-Wolff au 3ème ordre. Validation numérique de l'émergence d'une bande cubique (\(E \propto q^3\)) provoquant l'annihilation de la vitesse de groupe et une divergence en loi de puissance de la densité d'états (\(\rho(E) \propto E^{-1/3}\)), propice aux interactions de Coulomb.
       </p>
     </div>
 
     <div style="background: var(--bg-2); padding: 20px; border-radius: 4px; border-left: 3px solid var(--gold);">
-      <h4 style="font-family: var(--fh); font-size: 0.95rem; color: var(--cream); margin-bottom: 8px;">3. Corrections "On-Top" Multi-Corps</h4>
+      <h4 style="font-family: var(--fh); font-size: 0.95rem; color: var(--cream); margin-bottom: 8px;">Jalon III : Corrélations Électron-Électron de Bord</h4>
       <p style="font-size: 0.85rem; color: var(--cream-2); line-height: 1.6;">
-        Introduction de la répulsion coulombienne sur site $U$ via le **modèle de Hubbard** pour lever la dégénérescence des bords zigzag (instabilité de Stoner) par un ordre antiferromagnétique ouvrant un gap de Mott-Hubbard. Intégration prévue dans le pipeline des corrections de quasi-particules **GW** et de l'équation de **Bethe-Salpeter (BSE)** pour l'analyse des états excitoniques confinés.
+        Étude de la rupture de symétrie chirale par les sauts de seconds voisins (\(t_2\)) et de la singularité de van Hove aux bords zigzag des nanorubans (ZGNR). L'introduction du terme de **Hubbard** engendre une transition de phase vers un ordre antiferromagnétique qui lève la dégénérescence. Cet effet multi-corps est implémenté algorithmiquement via un potentiel de champ moyen alterné (\(\pm U_{\text{eff}}\)) sur les frontières.
       </p>
     </div>
 
@@ -820,12 +823,12 @@
       <span class="mv">Pr. Mohamed Achehboune</span>
     </div>
     <div class="r-meta-item">
-      <span class="ml">Ancrage Théorique</span>
-      <span class="mv">Opérateurs de Schrödinger quasi-périodiques</span>
+      <span class="ml">Objectif :</span>
+      <span class="mv">Contrôle des phases corrélées par couplage de jauge et de champ</span>
     </div>
     <div class="r-meta-item">
-      <span class="ml">Séquence Algorithmique</span>
-      <span class="mv" style="font-family: var(--fc); font-size: 0.8rem; color: var(--gold);">Moiré → TB → GW → BSE</span>
+      <span class="ml">Pipeline Computationnel</span>
+      <span class="mv" style="font-family: var(--fc); font-size: 0.8rem; color: var(--gold);">\( \text{Moiré} \longrightarrow \text{Tight-Binding} \longrightarrow \text{GW} \longrightarrow \text{BSE} \)</span>
     </div>
   </div>
 </div>
