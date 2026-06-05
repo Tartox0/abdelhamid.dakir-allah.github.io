@@ -782,26 +782,53 @@
     </div>
 
     <div class="rf rv">
-      <p class="rl">Projet Actuel · RISE-X</p>
-      <h3>Engineering emergent quantum and excitonic states in Geometrically Engineered 2D Materials</h3>
-      <p>
-        Recherche au long cours explorant les propriétés émergentes dans les matériaux bidimensionnels. Étude des structures de bandes, des modèles tight-binding et des phénomènes liés aux angles magiques dans le graphène et les hétérostructures (ex. hBN).
+  <p class="rl">Projet de Recherche Principal · RISE-X</p>
+  <h3>Engineering Emergent Quantum and Excitonic States in Geometrically Engineered 2D Materials</h3>
+  
+  <p style="margin-bottom: 24px;">
+    Étude théorique et computationnelle des phases fortement corrélées (excitoniques, supraconductrices et magnétiques) émergeant dans les matériaux bidimensionnels par ingénierie géométrique (torsion, empilement et contrainte). Ce projet s'appuie sur l'ancrage formel de la <strong>théorie spectrale des opérateurs de Schrödinger quasi-périodiques</strong>.
+  </p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 32px;">
+    
+    <div style="background: var(--bg-2); padding: 20px; border-radius: 4px; border-left: 3px solid var(--gold);">
+      <h4 style="font-family: var(--fh); font-size: 0.95rem; color: var(--cream); margin-bottom: 8px;">1. Base Liaisons Fortes &amp; Wannierisation</h4>
+      <p style="font-size: 0.85rem; color: var(--cream-2); line-height: 1.6;">
+        Projection de l'Hamiltonien continu sur une base minimale d'orbitales $2p_z$. Pour concilier un métrique orthogonale ($S=\mathbb{I}$) et la précision <em>ab initio</em>, les paramètres de saut $t_{ij}$ sont extraits par transformation de jauge unitaire via les <strong>Fonctions de Wannier Maximalement Localisées (MLWFs)</strong>, absorbant ainsi les effets de recouvrement.
       </p>
-      <div class="r-meta">
-        <div class="r-meta-item">
-          <span class="ml">Superviseur</span>
-          <span class="mv">Pr. Mohammed Achehboune</span>
-        </div>
-        <div class="r-meta-item">
-          <span class="ml">Institution</span>
-          <span class="mv">UM6P</span>
-        </div>
-        <div class="r-meta-item">
-          <span class="ml">Focus Méthodologique</span>
-          <span class="mv">Simulations ab initio, Modèles Tight-Binding</span>
-        </div>
-      </div>
     </div>
+
+    <div style="background: var(--bg-2); padding: 20px; border-radius: 4px; border-left: 3px solid var(--gold);">
+      <h4 style="font-family: var(--fh); font-size: 0.95rem; color: var(--cream); margin-bottom: 8px;">2. Empilements Multicouches &amp; Aplatissement</h4>
+      <p style="font-size: 0.85rem; color: var(--cream-2); line-height: 1.6;">
+        Analyse comparative des symétries d'empilements. Modélisation de la cascade de dimérisation dans le **graphène trilayer rhomboédrique (ABC)** par perturbation du 3ème ordre (Schrieffer-Wolff). Preuve numérique de l'émergence d'une bande cubique ($E \propto q^3$) annihilant la vitesse de groupe et divergeant la densité d'états ($\rho(E) \propto E^{-1/3}$).
+      </p>
+    </div>
+
+    <div style="background: var(--bg-2); padding: 20px; border-radius: 4px; border-left: 3px solid var(--gold);">
+      <h4 style="font-family: var(--fh); font-size: 0.95rem; color: var(--cream); margin-bottom: 8px;">3. Corrections "On-Top" Multi-Corps</h4>
+      <p style="font-size: 0.85rem; color: var(--cream-2); line-height: 1.6;">
+        Introduction de la répulsion coulombienne sur site $U$ via le **modèle de Hubbard** pour lever la dégénérescence des bords zigzag (instabilité de Stoner) par un ordre antiferromagnétique ouvrant un gap de Mott-Hubbard. Intégration prévue dans le pipeline des corrections de quasi-particules **GW** et de l'équation de **Bethe-Salpeter (BSE)** pour l'analyse des états excitoniques confinés.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="r-meta">
+    <div class="r-meta-item">
+      <span class="ml">Superviseur</span>
+      <span class="mv">Pr. Mohamed Achehboune</span>
+    </div>
+    <div class="r-meta-item">
+      <span class="ml">Ancrage Théorique</span>
+      <span class="mv">Opérateurs de Schrödinger quasi-périodiques</span>
+    </div>
+    <div class="r-meta-item">
+      <span class="ml">Séquence Algorithmique</span>
+      <span class="mv" style="font-family: var(--fc); font-size: 0.8rem; color: var(--gold);">Moiré → TB → GW → BSE</span>
+    </div>
+  </div>
+</div>
 
     <div class="stages-grid">
       <div class="sc rv">
