@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Abdelhamid — Physique théorique et computationnelle · UM6P SAEP">
-  <!-- TODO: remplace "Abdelhamid" par ton nom complet dans le titre -->
   <title>Abdelhamid — Physics & Research</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Remplacement des polices "générées par défaut" par une typographie moderne, nette et scientifique -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -23,21 +23,22 @@
       --bg-2:     #181820;
       --bg-3:     #1e1e2a;
 
-      --cream:    #dfd3bc;
-      --cream-2:  #b0a08a;
-      --cream-3:  #6e6050;
+      --cream:    #f4f4f5;
+      --cream-2:  #a1a1aa;
+      --cream-3:  #71717a;
 
-      --gold:     #c49456;
-      --gold-2:   #8a6430;
-      --gold-glow:rgba(196,148,86,0.14);
+      --gold:     #38bdf8; /* Transition vers un accent bleu/cyan plus "Tech/Physique" */
+      --gold-2:   #0284c7;
+      --gold-glow:rgba(56, 189, 248, 0.14);
 
       --silver:   #8aa0b8;
-      --border:   rgba(196,148,86,0.20);
-      --border-2: rgba(196,148,86,0.09);
+      --border:   rgba(56, 189, 248, 0.20);
+      --border-2: rgba(255, 255, 255, 0.08);
 
-      --fd: 'Cormorant Garamond', Georgia, serif;
-      --fh: 'Playfair Display', Georgia, serif;
-      --fb: 'Lora', Georgia, serif;
+      /* Unification des polices pour un rendu beaucoup plus structuré et moins "poétique" */
+      --fd: 'Inter', sans-serif;
+      --fh: 'Inter', sans-serif;
+      --fb: 'Inter', sans-serif;
       --fc: 'JetBrains Mono', monospace;
 
       --ease: 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -65,8 +66,8 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(ellipse 60% 60% at 15% 25%, rgba(196,148,86,0.04) 0%, transparent 65%),
-        radial-gradient(ellipse 50% 50% at 85% 75%, rgba(138,160,184,0.04) 0%, transparent 60%);
+        radial-gradient(ellipse 60% 60% at 15% 25%, rgba(56, 189, 248, 0.03) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 85% 75%, rgba(138, 160, 184, 0.03) 0%, transparent 60%);
       pointer-events: none;
       z-index: 0;
     }
@@ -74,7 +75,7 @@
       content: '';
       position: fixed;
       inset: 0;
-      background: radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.55) 100%);
+      background: radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.65) 100%);
       pointer-events: none;
       z-index: 0;
     }
@@ -107,11 +108,12 @@
     .nav-logo {
       font-family: var(--fd);
       font-size: 1.05rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--cream);
       cursor: default;
     }
+    .nav-logo span { color: var(--gold); }
     .nav-links {
       display: flex;
       gap: 34px;
@@ -120,7 +122,8 @@
     .nav-links a {
       font-family: var(--fb);
       font-size: 0.75rem;
-      letter-spacing: 0.13em;
+      font-weight: 500;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--cream-2);
       position: relative;
@@ -129,12 +132,12 @@
     .nav-links a::after {
       content: '';
       position: absolute;
-      bottom: -2px; left: 0;
+      bottom: -4px; left: 0;
       width: 0; height: 1px;
       background: var(--gold);
       transition: width var(--ease);
     }
-    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover { color: var(--cream); }
     .nav-links a:hover::after { width: 100%; }
 
     /* ── HERO ───────────────────────────────────────── */
@@ -155,41 +158,42 @@
       letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       opacity: 0;
       animation: fadeUp 1s ease 0.3s forwards;
     }
     .hero-name {
       font-family: var(--fd);
-      font-size: clamp(3.4rem, 9vw, 8rem);
-      font-weight: 300;
+      font-size: clamp(3.4rem, 9vw, 6.5rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
       line-height: 0.95;
       color: var(--cream);
       opacity: 0;
       animation: fadeUp 1s ease 0.6s forwards;
     }
-    .hero-name em { font-style: italic; color: var(--gold); }
+    .hero-name em { font-style: normal; color: var(--gold); }
     .hero-rule {
-      width: 52px; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      width: 60px; height: 2px;
+      background: var(--gold);
       margin: 32px auto;
       opacity: 0;
       animation: fadeIn 1s ease 1.0s forwards;
     }
     .hero-subtitle {
       font-family: var(--fh);
-      font-size: clamp(0.88rem, 2vw, 1.08rem);
-      font-style: italic;
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      font-weight: 400;
       color: var(--cream-2);
-      max-width: 460px;
-      letter-spacing: 0.025em;
+      max-width: 480px;
+      letter-spacing: 0.01em;
       line-height: 1.7;
       opacity: 0;
       animation: fadeUp 1s ease 1.2s forwards;
     }
     .hero-tags {
       display: flex;
-      gap: 18px;
+      gap: 12px;
       margin-top: 38px;
       flex-wrap: wrap;
       justify-content: center;
@@ -199,11 +203,12 @@
     .hero-tag {
       font-family: var(--fc);
       font-size: 0.62rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--cream-3);
-      padding: 5px 13px;
+      letter-spacing: 0.1em;
+      color: var(--cream-2);
+      background: var(--bg-1);
+      padding: 6px 14px;
       border: 1px solid var(--border-2);
+      border-radius: 4px;
     }
     .hero-equation {
       position: absolute;
@@ -215,7 +220,7 @@
       animation: fadeIn 2s ease 2.2s forwards;
       white-space: nowrap;
     }
-    .hero-equation .katex { font-size: 0.82rem !important; opacity: 0.25; }
+    .hero-equation .katex { font-size: 0.85rem !important; opacity: 0.4; }
     .scroll-ind {
       position: absolute;
       bottom: 30px;
@@ -224,14 +229,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       opacity: 0;
       animation: fadeIn 1s ease 2.4s forwards;
     }
     .scroll-ind span {
       font-family: var(--fc);
       font-size: 0.58rem;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--cream-3);
     }
@@ -251,25 +256,24 @@
     .sh {
       display: flex;
       align-items: baseline;
-      gap: 18px;
+      gap: 24px;
       margin-bottom: 58px;
     }
     .sn {
-      font-family: var(--fd);
-      font-size: 4rem;
-      font-weight: 300;
-      font-style: italic;
-      color: #1a1a24;
+      font-family: var(--fc);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--gold);
       line-height: 1;
       user-select: none;
     }
     .st {
       font-family: var(--fh);
-      font-size: clamp(1.55rem, 3vw, 2.3rem);
-      font-weight: 400;
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
       color: var(--cream);
     }
-    .st em { font-style: italic; color: var(--gold); }
 
     /* ── REVEAL ANIMATION ───────────────────────────── */
     .rv {
@@ -297,11 +301,13 @@
       right: -12px; bottom: -12px;
       border: 1px solid var(--border-2);
       z-index: -1;
+      border-radius: 4px;
     }
     .portrait-frame {
       border: 1px solid var(--border);
       background: var(--bg-1);
       overflow: hidden;
+      border-radius: 4px;
     }
     .about-body p {
       color: var(--cream-2);
@@ -310,23 +316,21 @@
       margin-bottom: 18px;
     }
     .about-body p strong { color: var(--cream); font-weight: 500; }
-    .about-body p em { font-style: italic; color: var(--gold); }
     .dots {
       display: flex;
       flex-direction: column;
-      gap: 11px;
-      margin-top: 30px;
+      gap: 14px;
+      margin-top: 34px;
     }
     .dot-item {
       display: flex;
       align-items: baseline;
       gap: 13px;
-      font-size: 0.84rem;
+      font-size: 0.9rem;
       color: var(--cream-2);
     }
     .dot {
-      width: 4px; height: 4px;
-      border-radius: 50%;
+      width: 6px; height: 6px;
       background: var(--gold);
       flex-shrink: 0;
       margin-top: 0.35em;
@@ -334,30 +338,18 @@
 
     /* ── RESEARCH ───────────────────────────────────── */
     .rf {
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-2);
       background: var(--bg-1);
       padding: 42px 46px;
       margin-bottom: 44px;
       position: relative;
       overflow: hidden;
-    }
-    .rf::before {
-      content: 'RISE-X';
-      position: absolute;
-      top: -24px; right: -6px;
-      font-family: var(--fd);
-      font-size: 7.5rem;
-      font-weight: 300;
-      font-style: italic;
-      color: #1a1a24;
-      pointer-events: none;
-      user-select: none;
-      line-height: 1;
+      border-radius: 6px;
     }
     .rl {
       font-family: var(--fc);
-      font-size: 0.62rem;
-      letter-spacing: 0.22em;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 14px;
@@ -365,8 +357,7 @@
     .rf h3 {
       font-family: var(--fh);
       font-size: 1.45rem;
-      font-weight: 400;
-      font-style: italic;
+      font-weight: 500;
       color: var(--cream);
       margin-bottom: 16px;
       max-width: 620px;
@@ -381,18 +372,20 @@
     .r-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 28px;
-      margin-top: 28px;
+      gap: 32px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-2);
     }
-    .r-meta-item { display: flex; flex-direction: column; gap: 3px; }
+    .r-meta-item { display: flex; flex-direction: column; gap: 4px; }
     .ml {
       font-family: var(--fc);
-      font-size: 0.58rem;
-      letter-spacing: 0.22em;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--cream-3);
     }
-    .mv { font-size: 0.85rem; color: var(--cream); }
+    .mv { font-size: 0.88rem; color: var(--cream); font-weight: 500; }
 
     .stages-grid {
       display: grid;
@@ -403,169 +396,158 @@
       border: 1px solid var(--border-2);
       background: var(--bg-1);
       padding: 30px 34px;
-      transition: border-color var(--ease), background var(--ease);
+      border-radius: 6px;
+      transition: border-color var(--ease), transform var(--ease);
     }
-    .sc:hover { border-color: var(--border); background: var(--bg-2); }
+    .sc:hover { border-color: var(--border); transform: translateY(-3px); }
     .sc .status {
       font-family: var(--fc);
-      font-size: 0.58rem;
-      letter-spacing: 0.2em;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 11px;
+      margin-bottom: 14px;
     }
-    .sc .status.pot { color: var(--silver); }
+    .sc .status.pot { color: var(--cream-3); }
     .sc h4 {
       font-family: var(--fh);
-      font-size: 0.98rem;
-      font-weight: 400;
+      font-size: 1.05rem;
+      font-weight: 500;
       color: var(--cream);
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
     .sc .sup {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--cream-2);
-      font-style: italic;
-      margin-bottom: 11px;
+      margin-bottom: 14px;
     }
-    .sc p { font-size: 0.82rem; color: var(--cream-3); line-height: 1.72; }
+    .sc p { font-size: 0.88rem; color: var(--cream-3); line-height: 1.6; }
     .sc .dur {
-      margin-top: 14px;
+      margin-top: 18px;
       font-family: var(--fc);
-      font-size: 0.6rem;
-      letter-spacing: 0.12em;
-      color: var(--cream-3);
+      font-size: 0.65rem;
+      color: var(--cream-2);
+      padding: 4px 10px;
+      background: var(--bg-2);
+      display: inline-block;
+      border-radius: 4px;
     }
 
     /* ── PROJECTS ───────────────────────────────────── */
     .pg {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1px;
-      background: var(--border-2);
-      border: 1px solid var(--border-2);
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
     }
     .pc {
-      background: var(--bg);
+      background: var(--bg-1);
+      border: 1px solid var(--border-2);
+      border-radius: 6px;
       padding: 38px;
       position: relative;
       overflow: hidden;
-      transition: background var(--ease);
+      transition: border-color var(--ease), transform var(--ease);
     }
-    .pc:hover { background: var(--bg-1); }
+    .pc:hover { border-color: var(--border); transform: translateY(-3px); }
     .peq {
       position: absolute;
-      bottom: 18px; right: 18px;
+      bottom: 24px; right: 24px;
       font-family: var(--fc);
-      font-size: 0.68rem;
-      color: #1e1e2a;
+      font-size: 0.75rem;
+      color: var(--bg-3);
       transition: color var(--ease);
       pointer-events: none;
       white-space: nowrap;
     }
-    .pc:hover .peq { color: var(--gold-2); }
+    .pc:hover .peq { color: rgba(56, 189, 248, 0.15); }
     .pn {
-      font-family: var(--fd);
-      font-size: 0.67rem;
-      letter-spacing: 0.2em;
+      font-family: var(--fc);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
     .pc h3 {
       font-family: var(--fh);
-      font-size: 1.1rem;
-      font-weight: 400;
-      font-style: italic;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
       color: var(--cream);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       line-height: 1.35;
     }
     .pc p {
-      font-size: 0.84rem;
+      font-size: 0.9rem;
       color: var(--cream-2);
-      line-height: 1.75;
-      margin-bottom: 22px;
+      line-height: 1.7;
+      margin-bottom: 26px;
     }
-    .ptags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .ptags { display: flex; flex-wrap: wrap; gap: 8px; }
     .ptag {
       font-family: var(--fc);
-      font-size: 0.58rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--cream-3);
+      font-size: 0.6rem;
+      color: var(--cream-2);
+      background: var(--bg-2);
       padding: 4px 10px;
-      border: 1px solid var(--border-2);
-      transition: border-color var(--ease), color var(--ease);
+      border-radius: 4px;
     }
-    .pc:hover .ptag { border-color: var(--gold-2); color: var(--cream-2); }
     .pl {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      margin-top: 18px;
+      gap: 8px;
+      margin-top: 24px;
       font-family: var(--fc);
-      font-size: 0.64rem;
-      letter-spacing: 0.14em;
+      font-size: 0.7rem;
       text-transform: uppercase;
       color: var(--gold);
+      font-weight: 500;
       transition: gap var(--ease);
     }
-    .pl:hover { gap: 13px; }
+    .pl:hover { gap: 14px; }
 
     /* ── REPORTS ────────────────────────────────────── */
     .rl-wrap {
       display: flex;
       flex-direction: column;
-      border: 1px solid var(--border-2);
+      gap: 12px;
     }
     .ri {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      padding: 26px 34px;
-      border-bottom: 1px solid var(--border-2);
+      padding: 24px 32px;
+      background: var(--bg-1);
+      border: 1px solid var(--border-2);
+      border-radius: 6px;
       cursor: pointer;
-      transition: background var(--ease);
+      transition: border-color var(--ease);
     }
-    .ri:last-child { border-bottom: none; }
-    .ri:hover { background: var(--bg-1); }
-    .ri-info { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+    .ri:hover { border-color: var(--border); }
+    .ri-info { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 0; }
     .ri-title {
       font-family: var(--fh);
-      font-size: 0.93rem;
-      font-style: italic;
+      font-size: 1.05rem;
+      font-weight: 500;
       color: var(--cream);
     }
     .ri-meta {
       font-family: var(--fc);
-      font-size: 0.6rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      font-size: 0.65rem;
       color: var(--cream-3);
-    }
-    .ri-grade {
-      font-family: var(--fd);
-      font-size: 1.35rem;
-      font-style: italic;
-      color: var(--gold);
-      white-space: nowrap;
-      flex-shrink: 0;
     }
     .ri-btn {
       font-family: var(--fc);
-      font-size: 0.6rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--cream-3);
-      border: 1px solid var(--border-2);
-      padding: 6px 14px;
-      flex-shrink: 0;
+      font-size: 0.65rem;
+      color: var(--cream-2);
+      background: var(--bg-2);
+      padding: 8px 16px;
+      border-radius: 4px;
       transition: all var(--ease);
       white-space: nowrap;
     }
-    .ri:hover .ri-btn { color: var(--gold); border-color: var(--border); }
+    .ri:hover .ri-btn { color: var(--bg); background: var(--gold); }
 
     /* ── SKILLS ─────────────────────────────────────── */
     .skills-grid {
@@ -575,76 +557,60 @@
     }
     .sg h4 {
       font-family: var(--fh);
-      font-size: 0.88rem;
-      font-weight: 400;
-      font-style: italic;
+      font-size: 1rem;
+      font-weight: 500;
       color: var(--gold);
-      margin-bottom: 18px;
-      padding-bottom: 11px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
       border-bottom: 1px solid var(--border-2);
     }
-    .sl { display: flex; flex-direction: column; gap: 10px; }
+    .sl { display: flex; flex-direction: column; gap: 12px; }
     .si {
       display: flex;
-      align-items: baseline;
-      gap: 10px;
-      font-size: 0.86rem;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
       color: var(--cream-2);
     }
     .si-dot {
-      width: 3px; height: 3px;
-      border-radius: 50%;
-      background: var(--gold-2);
+      width: 4px; height: 4px;
+      background: var(--cream-3);
       flex-shrink: 0;
-      margin-top: 0.38em;
     }
 
     /* ── CONTACT ─────────────────────────────────────── */
-    #contact { text-align: center; }
-    .cq {
-      font-family: var(--fd);
-      font-size: clamp(1.15rem, 2.5vw, 1.75rem);
-      font-style: italic;
-      font-weight: 300;
-      color: var(--cream-2);
-      max-width: 680px;
-      margin: 0 auto 10px;
-      line-height: 1.55;
-    }
-    .cqa {
-      font-family: var(--fc);
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--cream-3);
-      margin-bottom: 50px;
-    }
+    #contact { text-align: center; padding-bottom: calc(var(--pad) * 1.5); }
     .clinks {
       display: flex;
       gap: 46px;
       justify-content: center;
       flex-wrap: wrap;
+      margin-top: 40px;
     }
     .clink {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 7px;
-      transition: transform var(--ease);
+      gap: 10px;
+      padding: 24px 32px;
+      background: var(--bg-1);
+      border: 1px solid var(--border-2);
+      border-radius: 6px;
+      transition: border-color var(--ease), transform var(--ease);
     }
-    .clink:hover { transform: translateY(-3px); }
+    .clink:hover { border-color: var(--border); transform: translateY(-4px); }
     .cl-label {
       font-family: var(--fc);
-      font-size: 0.58rem;
-      letter-spacing: 0.2em;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--cream-3);
     }
     .cl-val {
       font-family: var(--fd);
-      font-size: 0.95rem;
-      font-style: italic;
-      color: var(--gold);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--cream);
     }
 
     /* ── FOOTER ──────────────────────────────────────── */
@@ -654,11 +620,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      background: var(--bg-1);
       position: relative;
       z-index: 2;
     }
-    .fn { font-family: var(--fd); font-size: 0.82rem; font-style: italic; color: var(--cream-3); }
-    .feq { font-family: var(--fc); font-size: 0.68rem; color: var(--cream-3); opacity: 0.45; }
+    .fn { font-family: var(--fd); font-size: 0.85rem; color: var(--cream-3); font-weight: 500; }
+    .feq { font-family: var(--fc); font-size: 0.75rem; color: var(--cream-3); opacity: 0.6; }
 
     /* ── KEYFRAMES ───────────────────────────────────── */
     @keyframes fadeUp {
@@ -678,15 +645,14 @@
     @media (max-width: 800px) {
       .about-grid { grid-template-columns: 1fr; }
       .portrait-wrap { width: 180px; }
-      .rf { padding: 26px 22px; }
-      .rf::before { display: none; }
-      .pc { padding: 26px 22px; }
-      .ri { padding: 20px 22px; }
+      .rf { padding: 32px 24px; }
+      .pc { padding: 32px 24px; }
+      .ri { flex-direction: column; align-items: flex-start; }
     }
     @media (max-width: 520px) {
       .nav-links { display: none; }
       .hero-tags { display: none; }
-      footer { flex-direction: column; gap: 6px; text-align: center; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
     }
   </style>
 </head>
@@ -697,8 +663,7 @@
 
   <!-- ── NAV ───────────────────────────────────────── -->
   <nav id="nav">
-    <!-- TODO: remplace les initiales par les tiennes -->
-    <div class="nav-logo">A · M</div>
+    <div class="nav-logo">Abdelhamid<span>.</span></div>
     <ul class="nav-links">
       <li><a href="#about">À propos</a></li>
       <li><a href="#research">Recherche</a></li>
@@ -710,25 +675,23 @@
 
   <!-- ── HERO ──────────────────────────────────────── -->
   <section id="hero">
-    <p class="hero-eyebrow">UM6P · SAEP · Cohorte I · S5</p>
-    <!-- TODO: remplace par ton prénom (et nom si tu veux) -->
-    <h1 class="hero-name">Abdel<em>hamid</em></h1>
+    <p class="hero-eyebrow">UM6P · SAEP · Cohorte I</p>
+    <h1 class="hero-name">Abdelhamid</h1>
     <div class="hero-rule"></div>
     <p class="hero-subtitle">
-      Physique théorique &amp; computationnelle<br>
-      Matériaux quantiques · Matière condensée
+      Physique théorique et mathématiques appliquées à la recherche.<br>
+      Matériaux quantiques, approches axiomatiques et calcul haute performance.
     </p>
     <div class="hero-tags">
-      <span class="hero-tag">Tight-Binding</span>
-      <span class="hero-tag">Graphène · hBN</span>
-      <span class="hero-tag">Ab Initio</span>
-      <span class="hero-tag">QFT</span>
+      <span class="hero-tag">Mécanique Quantique</span>
+      <span class="hero-tag">Matière Condensée</span>
       <span class="hero-tag">Mathematica</span>
+      <span class="hero-tag">C++ / Python</span>
     </div>
-    <!-- Vlasov equation rendered by KaTeX -->
+    <!-- Équation de Vlasov -->
     <div class="hero-equation" id="hero-eq"></div>
     <div class="scroll-ind">
-      <span>Défiler</span>
+      <span>Découvrir</span>
       <div class="scroll-line"></div>
     </div>
   </section>
@@ -737,61 +700,49 @@
   <section id="about">
     <div class="sh rv">
       <span class="sn">01</span>
-      <h2 class="st">À <em>propos</em></h2>
+      <h2 class="st">À propos</h2>
     </div>
     <div class="about-grid">
 
-      <!-- Brillouin zone SVG portrait -->
       <div class="rv">
         <div class="portrait-wrap">
           <div class="portrait-frame">
             <svg viewBox="0 0 220 220" width="220" height="220" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <radialGradient id="bg" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#c49456" stop-opacity="0.07"/>
-                  <stop offset="100%" stop-color="#c49456" stop-opacity="0"/>
+                  <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1"/>
+                  <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
                 </radialGradient>
               </defs>
               <circle cx="110" cy="110" r="106" fill="url(#bg)"/>
 
-              <!-- First Brillouin zone of graphene (hexagon, K points at vertices) -->
+              <!-- First Brillouin zone of graphene -->
               <polygon points="110,24 183,68 183,152 110,196 37,152 37,68"
-                fill="none" stroke="#c49456" stroke-width="0.7" stroke-opacity="0.42"/>
+                fill="none" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.5"/>
 
-              <!-- Γ → K paths (high-symmetry lines) -->
-              <line x1="110" y1="110" x2="110" y2="24"  stroke="#c49456" stroke-width="0.3" stroke-opacity="0.18"/>
-              <line x1="110" y1="110" x2="183" y2="68"  stroke="#c49456" stroke-width="0.3" stroke-opacity="0.18"/>
-              <line x1="110" y1="110" x2="183" y2="152" stroke="#c49456" stroke-width="0.3" stroke-opacity="0.18"/>
-              <line x1="110" y1="110" x2="110" y2="196" stroke="#c49456" stroke-width="0.3" stroke-opacity="0.18"/>
-              <line x1="110" y1="110" x2="37"  y2="152" stroke="#c49456" stroke-width="0.3" stroke-opacity="0.18"/>
-              <line x1="110" y1="110" x2="37"  y2="68"  stroke="#c49456" stroke-width="0.3" stroke-opacity="0.18"/>
+              <!-- Γ → K paths -->
+              <line x1="110" y1="110" x2="110" y2="24"  stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.2"/>
+              <line x1="110" y1="110" x2="183" y2="68"  stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.2"/>
+              <line x1="110" y1="110" x2="183" y2="152" stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.2"/>
+              <line x1="110" y1="110" x2="110" y2="196" stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.2"/>
+              <line x1="110" y1="110" x2="37"  y2="152" stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.2"/>
+              <line x1="110" y1="110" x2="37"  y2="68"  stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.2"/>
 
-              <!-- Energy contours (iso-energy circles around Γ) -->
-              <circle cx="110" cy="110" r="62" fill="none" stroke="#8aa0b8" stroke-width="0.38" stroke-opacity="0.20"/>
-              <circle cx="110" cy="110" r="40" fill="none" stroke="#8aa0b8" stroke-width="0.34" stroke-opacity="0.17"/>
-              <circle cx="110" cy="110" r="22" fill="none" stroke="#8aa0b8" stroke-width="0.30" stroke-opacity="0.14"/>
-
-              <!-- Dirac points K and K' (BZ corners) -->
-              <circle cx="110" cy="24"  r="2.4" fill="none" stroke="#c49456" stroke-width="0.8" stroke-opacity="0.60"/>
-              <circle cx="183" cy="68"  r="2.4" fill="none" stroke="#c49456" stroke-width="0.8" stroke-opacity="0.60"/>
-              <circle cx="183" cy="152" r="2.4" fill="none" stroke="#c49456" stroke-width="0.8" stroke-opacity="0.60"/>
-              <circle cx="110" cy="196" r="2.4" fill="none" stroke="#c49456" stroke-width="0.8" stroke-opacity="0.60"/>
-              <circle cx="37"  cy="152" r="2.4" fill="none" stroke="#c49456" stroke-width="0.8" stroke-opacity="0.60"/>
-              <circle cx="37"  cy="68"  r="2.4" fill="none" stroke="#c49456" stroke-width="0.8" stroke-opacity="0.60"/>
+              <!-- Dirac points -->
+              <circle cx="110" cy="24"  r="2.5" fill="#38bdf8" />
+              <circle cx="183" cy="68"  r="2.5" fill="#38bdf8" />
+              <circle cx="183" cy="152" r="2.5" fill="#38bdf8" />
+              <circle cx="110" cy="196" r="2.5" fill="#38bdf8" />
+              <circle cx="37"  cy="152" r="2.5" fill="#38bdf8" />
+              <circle cx="37"  cy="68"  r="2.5" fill="#38bdf8" />
 
               <!-- Γ point -->
-              <circle cx="110" cy="110" r="3.2" fill="#c49456" fill-opacity="0.35"/>
-              <circle cx="110" cy="110" r="1.6" fill="#c49456" fill-opacity="0.72"/>
+              <circle cx="110" cy="110" r="3.5" fill="#fff" />
 
               <!-- Labels -->
-              <text x="110" y="100" fill="#c49456" font-size="8" text-anchor="middle"
-                opacity="0.50" font-family="'JetBrains Mono',monospace">Γ</text>
-              <text x="110" y="16"  fill="#c49456" font-size="7" text-anchor="middle"
-                opacity="0.42" font-family="'JetBrains Mono',monospace">K</text>
-              <text x="191" y="64"  fill="#c49456" font-size="7" text-anchor="start"
-                opacity="0.42" font-family="'JetBrains Mono',monospace">K'</text>
-              <text x="110" y="218" fill="#c49456" font-size="7" text-anchor="middle"
-                opacity="0.30" font-family="'JetBrains Mono',monospace">Zone de Brillouin — Graphène</text>
+              <text x="110" y="100" fill="#a1a1aa" font-size="9" text-anchor="middle" font-family="'JetBrains Mono',monospace">Γ</text>
+              <text x="110" y="14"  fill="#a1a1aa" font-size="9" text-anchor="middle" font-family="'JetBrains Mono',monospace">K</text>
+              <text x="192" y="70"  fill="#a1a1aa" font-size="9" text-anchor="start" font-family="'JetBrains Mono',monospace">K'</text>
             </svg>
           </div>
         </div>
@@ -799,28 +750,23 @@
 
       <div class="about-body">
         <p class="rv">
-          Étudiant en 5ème semestre à l'<strong>École de Physique Appliquée et d'Ingénierie (SAEP) de l'UM6P</strong>,
-          premier de la première cohorte. Mon parcours m'a conduit de Centrale Nantes — quittée par choix — 
-          vers ce qui m'intéressait réellement : la physique théorique et les mathématiques de recherche.
+          Étudiant de 22 ans au sein de la <strong>School of Applied and Engineering Physics (SAEP)</strong> de l'UM6P (Cohorte I). Mon approche de la physique est fondamentalement guidée par un besoin de rigueur axiomatique et une appréciation des structures mathématiques sous-jacentes.
         </p>
         <p class="rv rv-d1">
-          Mes intérêts se situent à l'intersection de la <em>matière condensée</em>, des méthodes
-          <em>ab initio</em>, et des systèmes quantiques en basse dimension. Je travaille sur l'ingénierie
-          des états excitoniques et quantiques émergents dans les matériaux 2D géométriquement contraints —
-          en particulier le graphène contraint sur hBN dans le cadre moiré.
+          Mes intérêts majeurs se situent à l'intersection de la physique de la matière condensée, de la mécanique quantique et de l'ingénierie des matériaux 2D. J'accorde une importance particulière à l'étude des superréseaux moirés et de la théorie des groupes.
         </p>
         <div class="dots rv rv-d2">
           <div class="dot-item">
             <div class="dot"></div>
-            <span>Curriculum : QFT, relativité générale, méc. stat. hors-équilibre, algèbres de Lie, théorie des distributions</span>
+            <span>Expertises : Mécanique Quantique, Relativité Générale, Twistronique</span>
           </div>
           <div class="dot-item">
             <div class="dot"></div>
-            <span>Superviseur de recherche : Pr. Achehboune Mohamed (DFT ab initio, UM6P)</span>
+            <span>Outils de prédilection : LaTeX (documentation scientifique), Linux/Ubuntu, Mathematica</span>
           </div>
           <div class="dot-item">
             <div class="dot"></div>
-            <span>Langues : Arabe · Français · Anglais · Mandarin (HSK I)</span>
+            <span>Langues : Anglais, Français, Arabe, Swahili (18/20), Mandarin (HSK 1)</span>
           </div>
         </div>
       </div>
@@ -832,60 +778,38 @@
   <section id="research">
     <div class="sh rv">
       <span class="sn">02</span>
-      <h2 class="st">Re<em>cherche</em></h2>
+      <h2 class="st">Recherche</h2>
     </div>
 
     <div class="rf rv">
-      <p class="rl">Projet long-terme · RISE-X</p>
-      <h3>Engineering emergent quantum and excitonic states in geometrically engineered 2D materials</h3>
+      <p class="rl">Projet Actuel · RISE-X</p>
+      <h3>Engineering emergent quantum and excitonic states in Geometrically Engineered 2D Materials</h3>
       <p>
-        Dans le cadre du programme RISE-X de l'UM6P, ce projet pluriannuel explore l'ingénierie des
-        états quantiques et excitoniques dans des matériaux 2D géométriquement contraints — en particulier
-        le graphène contraint sur hBN dans un cadre moiré. L'approche combine des implémentations
-        tight-binding multi-couches avec corrections Hubbard mean-field, méthodes GW, et équation de
-        Bethe-Salpeter (GW+BSE).
+        Recherche au long cours explorant les propriétés émergentes dans les matériaux bidimensionnels. Étude des structures de bandes, des modèles tight-binding et des phénomènes liés aux angles magiques dans le graphène et les hétérostructures (ex. hBN).
       </p>
       <div class="r-meta">
         <div class="r-meta-item">
           <span class="ml">Superviseur</span>
-          <span class="mv">Pr. Achehboune Mohamed</span>
+          <span class="mv">Pr. Mohammed Achehboune</span>
         </div>
         <div class="r-meta-item">
           <span class="ml">Institution</span>
-          <span class="mv">UM6P · Ben Guerir, Maroc</span>
+          <span class="mv">UM6P</span>
         </div>
         <div class="r-meta-item">
-          <span class="ml">Méthodes</span>
-          <span class="mv">DFT · Tight-binding · GW+BSE</span>
-        </div>
-        <div class="r-meta-item">
-          <span class="ml">Système</span>
-          <span class="mv">Graphène / hBN · Moiré</span>
+          <span class="ml">Focus Méthodologique</span>
+          <span class="mv">Simulations ab initio, Modèles Tight-Binding</span>
         </div>
       </div>
     </div>
 
     <div class="stages-grid">
       <div class="sc rv">
-        <p class="status">Stage confirmé · Juillet–Août 2026</p>
-        <h4>UNamur — Tight-binding multicouches graphène ABC</h4>
-        <p class="sup">Prof. Luc Henrard</p>
-        <p>Modélisation tight-binding des empilements multicouches graphène ABC. Continuation de l'implémentation LCAO → Wannier → GW+BSE présentée en séminaire (250 diapositives Beamer).</p>
-        <p class="dur">6 semaines · Namur, Belgique</p>
-      </div>
-      <div class="sc rv rv-d1">
-        <p class="status pot">Stage probable · 2026–2027</p>
-        <h4>CEA Paris-Saclay — Théorie des groupes &amp; symétries de graphène</h4>
-        <p class="sup">Sylvain Latil (pressentí)</p>
-        <p>Représentations de groupes et symétries des empilements de graphène, dans la continuité du stage UNamur — Latil étant l'ancien postdoc de Henrard.</p>
-        <p class="dur">3 mois · Gif-sur-Yvette, France</p>
-      </div>
-      <div class="sc rv rv-d2">
-        <p class="status pot">Perspective · S8–S9</p>
-        <h4>ICTP — Master HPC (MHPC)</h4>
-        <p class="sup">Nicola Seriani (contact)</p>
-        <p>Programme MHPC lors d'une césure entre S8 et S9. Trajectoire post-diplôme : ICTP Postgraduate Diploma ou ICFP M1 (ENS Paris).</p>
-        <p class="dur">Trieste, Italie</p>
+        <p class="status">Stage de Recherche · Été 2026</p>
+        <h4>UNamur — Plasmonique et modélisation théorique</h4>
+        <p class="sup">Supervisé par Pr. Luc Henrard</p>
+        <p>Développement de modèles théoriques et simulations appliquées à la plasmonique dans le cadre de la physique de la matière condensée.</p>
+        <p class="dur">À partir du 1er Juillet · Namur, Belgique</p>
       </div>
     </div>
   </section>
@@ -894,63 +818,52 @@
   <section id="projects">
     <div class="sh rv">
       <span class="sn">03</span>
-      <h2 class="st">Pro<em>jets</em></h2>
+      <h2 class="st">Projets Expérimentaux & Numériques</h2>
     </div>
     <div class="pg">
 
       <div class="pc rv">
-        <p class="pn">01 · Physique des plasmas</p>
-        <h3>Amortissement de Landau &amp; Équation de Vlasov</h3>
+        <p class="pn">01 · Traitement du signal / Hardware</p>
+        <h3>Radar acoustique à super-résolution</h3>
         <p>
-          Théorie cinétique des plasmas : équation de Vlasov, fermeture de la hiérarchie BBGKY,
-          analyse de l'amortissement de Landau par pôles de Landau et transformée de Laplace.
-          Rapport académique complet en LaTeX (4 chapitres).
+          Conception et implémentation d'un système radar acoustique exploitant l'algorithme de traitement du signal MUSIC sur un microcontrôleur ESP32 pour la détection spatiale à haute résolution.
         </p>
         <div class="ptags">
-          <span class="ptag">Plasma</span>
-          <span class="ptag">Vlasov</span>
-          <span class="ptag">LaTeX</span>
-          <span class="ptag">Analyse complexe</span>
+          <span class="ptag">ESP32</span>
+          <span class="ptag">Algorithme MUSIC</span>
+          <span class="ptag">C++</span>
         </div>
-        <!-- TODO: remplace # par le chemin vers ton PDF, ex: assets/reports/vlasov.pdf -->
-        <a href="#" class="pl">Voir le rapport →</a>
-        <div class="peq">∂f/∂t + v·∇f = 0</div>
+        <a href="#" class="pl">Voir les spécifications →</a>
+        <div class="peq">P_MUSIC(θ)</div>
       </div>
 
       <div class="pc rv rv-d1">
-        <p class="pn">02 · Physique computationnelle</p>
-        <h3>Séries symboliques &amp; analyse asymptotique</h3>
+        <p class="pn">02 · Physique des plasmas</p>
+        <h3>Solveur Vlasov-Poisson 1D1V</h3>
         <p>
-          Projet de groupe (Projet 9) en Mathematica : développements asymptotiques symboliques,
-          approximants de Padé, oscillateur de Duffing, métrique de Schwarzschild,
-          gaz de Van der Waals. Architecture <code style="font-size:0.78em;color:var(--silver)">CustomAsymptoticProcessor</code>.
+          Projet de groupe portant sur le développement numérique d'un solveur pour l'équation de Vlasov couplée à l'équation de Poisson, visant à simuler la dynamique des plasmas et l'amortissement de Landau.
         </p>
         <div class="ptags">
-          <span class="ptag">Mathematica</span>
-          <span class="ptag">Asymptotique</span>
-          <span class="ptag">Padé</span>
-          <span class="ptag">Duffing</span>
+          <span class="ptag">Plasma Dynamics</span>
+          <span class="ptag">Méthodes Numériques</span>
+          <span class="ptag">Python</span>
         </div>
-        <!-- TODO: remplace # par ton PDF -->
-        <a href="#" class="pl">Voir le rapport →</a>
-        <div class="peq">f(x) ~ Σ aₙ xⁿ</div>
+        <a href="#" class="pl">Consulter le code →</a>
+        <div class="peq">∂f/∂t + v·∇f = 0</div>
       </div>
 
       <div class="pc rv rv-d2">
-        <p class="pn">03 · RISE-X Préliminaire</p>
-        <h3>Tight-binding graphène &amp; corrections Hubbard</h3>
+        <p class="pn">03 · Physique Théorique</p>
+        <h3>Modélisation Tight-Binding</h3>
         <p>
-          Implémentation du modèle tight-binding pour le graphène monocouche, bicouche (AA/AB)
-          et multicouche ABC avec corrections Hubbard mean-field. Présenté dans un pipeline
-          LCAO → Wannier → GW+BSE (250 diapositives Beamer).
+          Simulations de structures de bandes et modélisation en python de superréseaux moirés et de nanorubans de graphène (GNRs) pour extraire des caractéristiques quantiques clés.
         </p>
         <div class="ptags">
-          <span class="ptag">Tight-binding</span>
-          <span class="ptag">Graphène</span>
-          <span class="ptag">Hubbard</span>
+          <span class="ptag">Twistronics</span>
+          <span class="ptag">Hamiltonien</span>
           <span class="ptag">Python</span>
         </div>
-        <a href="#" class="pl">En cours →</a>
+        <a href="#" class="pl">En savoir plus →</a>
         <div class="peq">H = −t Σ c†ᵢcⱼ</div>
       </div>
 
@@ -961,33 +874,29 @@
   <section id="reports">
     <div class="sh rv">
       <span class="sn">04</span>
-      <h2 class="st">Rap<em>ports</em></h2>
+      <h2 class="st">Rapports & Publications</h2>
     </div>
     <div class="rl-wrap rv">
-      <!-- TODO: remplace chaque href="#" par le chemin réel de tes PDFs -->
       <div class="ri" onclick="window.open('#')">
         <div class="ri-info">
-          <span class="ri-title">Amortissement de Landau &amp; Équation de Vlasov</span>
-          <span class="ri-meta">Physique des plasmas · UM6P SAEP S5 · 2026</span>
+          <span class="ri-title">Solutions positives aux équations d'évolution et Théorème de Perron-Frobenius</span>
+          <span class="ri-meta">Rapport de recherche incluant l'étude des matrices de Metzler et de Vinograd · Mai 2026</span>
         </div>
-        <span class="ri-grade">14.4 / 20</span>
-        <span class="ri-btn">PDF →</span>
+        <span class="ri-btn">Lire le PDF</span>
       </div>
       <div class="ri" onclick="window.open('#')">
         <div class="ri-info">
-          <span class="ri-title">Symbolic Series Expansions &amp; Asymptotic Analysis in Mathematica</span>
-          <span class="ri-meta">Physique Computationnelle · Projet 9 · UM6P SAEP S5 · 2026</span>
+          <span class="ri-title">Conception matérielle d'un radar acoustique à algorithme MUSIC</span>
+          <span class="ri-meta">Proposition de projet (Hardware & Traitement du signal) rédigée en LaTeX · Mai 2026</span>
         </div>
-        <span class="ri-grade"></span>
-        <span class="ri-btn">PDF →</span>
+        <span class="ri-btn">Lire le PDF</span>
       </div>
       <div class="ri" onclick="window.open('#')">
         <div class="ri-info">
-          <span class="ri-title">Manuel pédagogique Wolfram Mathematica — 15 chapitres</span>
-          <span class="ri-meta">Physique Computationnelle · UM6P SAEP · 2025–2026</span>
+          <span class="ri-title">Dynamique des plasmas et analyse cinétique de l'amortissement de Landau</span>
+          <span class="ri-meta">Rapport de groupe · Développement 1D1V · Mai 2026</span>
         </div>
-        <span class="ri-grade"></span>
-        <span class="ri-btn">PDF →</span>
+        <span class="ri-btn">Lire le PDF</span>
       </div>
     </div>
   </section>
@@ -996,37 +905,34 @@
   <section id="skills">
     <div class="sh rv">
       <span class="sn">05</span>
-      <h2 class="st">Com<em>pétences</em></h2>
+      <h2 class="st">Compétences Techniques</h2>
     </div>
     <div class="skills-grid">
       <div class="sg rv">
-        <h4>Physique théorique</h4>
+        <h4>Domaines de Physique</h4>
         <div class="sl">
-          <div class="si"><div class="si-dot"></div>Théorie quantique des champs (QFT)</div>
-          <div class="si"><div class="si-dot"></div>Relativité générale</div>
-          <div class="si"><div class="si-dot"></div>Mécanique statistique hors-équilibre</div>
-          <div class="si"><div class="si-dot"></div>Physique des plasmas (Vlasov)</div>
-          <div class="si"><div class="si-dot"></div>Matière condensée (tight-binding, GW, BSE)</div>
+          <div class="si"><div class="si-dot"></div>Mécanique Quantique & Matière Condensée</div>
+          <div class="si"><div class="si-dot"></div>Physique Statistique</div>
+          <div class="si"><div class="si-dot"></div>Relativité Générale</div>
+          <div class="si"><div class="si-dot"></div>Physique des Plasmas</div>
         </div>
       </div>
       <div class="sg rv rv-d1">
-        <h4>Mathématiques</h4>
+        <h4>Mathématiques & Analyse</h4>
         <div class="sl">
-          <div class="si"><div class="si-dot"></div>Algèbres de Lie &amp; théorie des groupes</div>
-          <div class="si"><div class="si-dot"></div>Théorie de la mesure</div>
-          <div class="si"><div class="si-dot"></div>Théorie des distributions</div>
-          <div class="si"><div class="si-dot"></div>Analyse complexe &amp; asymptotique</div>
-          <div class="si"><div class="si-dot"></div>Approximants de Padé</div>
+          <div class="si"><div class="si-dot"></div>Théorie des Groupes & Algèbres de Lie</div>
+          <div class="si"><div class="si-dot"></div>Probabilités et théorèmes limites</div>
+          <div class="si"><div class="si-dot"></div>Théorie des Matrices (Metzler, Perron-Frobenius)</div>
+          <div class="si"><div class="si-dot"></div>Résolution de séries et équations différentielles</div>
         </div>
       </div>
       <div class="sg rv rv-d2">
-        <h4>Outils</h4>
+        <h4>Informatique Scientifique</h4>
         <div class="sl">
-          <div class="si"><div class="si-dot"></div>Wolfram Mathematica</div>
-          <div class="si"><div class="si-dot"></div>Python (NumPy, SciPy, Matplotlib)</div>
-          <div class="si"><div class="si-dot"></div>LaTeX · Beamer</div>
-          <div class="si"><div class="si-dot"></div>DFT / ABINIT (notions)</div>
-          <div class="si"><div class="si-dot"></div>Git</div>
+          <div class="si"><div class="si-dot"></div>Wolfram Mathematica (DSolve, ComplexExpand)</div>
+          <div class="si"><div class="si-dot"></div>Python (Modélisation avancée)</div>
+          <div class="si"><div class="si-dot"></div>Environnement Linux / Ubuntu</div>
+          <div class="si"><div class="si-dot"></div>LaTeX (Rédaction mathématique rigoureuse)</div>
         </div>
       </div>
     </div>
@@ -1034,45 +940,38 @@
 
   <!-- ── CONTACT ────────────────────────────────────── -->
   <section id="contact">
-    <div class="sh rv" style="justify-content:center;text-align:center;flex-direction:column;align-items:center;gap:4px;">
-      <span class="sn" style="font-size:3rem;color:#1a1a24;">06</span>
-      <h2 class="st">Con<em>tact</em></h2>
+    <div class="sh rv" style="justify-content:center;text-align:center;flex-direction:column;align-items:center;gap:12px;">
+      <span class="sn" style="font-size:1.5rem;">06</span>
+      <h2 class="st">Me Contacter</h2>
     </div>
-    <p class="cq rv">
-      "Physics is like sex: sure, it may give some practical results,
-      but that's not why we do it."
-    </p>
-    <p class="cqa rv">— Richard P. Feynman</p>
     <div class="clinks rv">
-      <!-- TODO: remplace les trois placeholders ci-dessous -->
-      <a href="mailto:TODO_ton_email@um6p.ma" class="clink">
-        <span class="cl-label">Email</span>
-        <span class="cl-val">TODO_ton_email@um6p.ma</span>
+      <a href="mailto:abdelhamid@um6p.ma" class="clink">
+        <span class="cl-label">Email Académique</span>
+        <span class="cl-val">abdelhamid@um6p.ma</span>
       </a>
-      <a href="https://github.com/TODO_ton_github" target="_blank" class="clink">
-        <span class="cl-label">GitHub</span>
-        <span class="cl-val">github.com/TODO_ton_github</span>
+      <a href="https://github.com/" target="_blank" class="clink">
+        <span class="cl-label">Dépôts Code</span>
+        <span class="cl-val">GitHub Profil</span>
       </a>
-      <a href="https://linkedin.com/in/TODO_ton_linkedin" target="_blank" class="clink">
-        <span class="cl-label">LinkedIn</span>
-        <span class="cl-val">linkedin.com/in/TODO</span>
+      <a href="https://linkedin.com/" target="_blank" class="clink">
+        <span class="cl-label">Réseau Professionnel</span>
+        <span class="cl-val">LinkedIn Profil</span>
       </a>
     </div>
   </section>
 
   <!-- ── FOOTER ──────────────────────────────────────── -->
   <footer>
-    <!-- TODO: remplace par ton nom complet -->
-    <span class="fn">Abdelhamid — UM6P SAEP, 2026</span>
-    <span class="feq">H|ψ⟩ = E|ψ⟩</span>
+    <span class="fn">Abdelhamid — SAEP UM6P, 2026</span>
+    <span class="feq">∇ × E = -∂B/∂t</span>
   </footer>
 
   <!-- ── SCRIPTS ────────────────────────────────────── -->
   <script>
-    /* ── Canvas: floating physics symbols ── */
+    /* ── Canvas: floating physics symbols (ajustés aux couleurs) ── */
     const canvas = document.getElementById('bg-canvas');
     const ctx    = canvas.getContext('2d');
-    const SYMS   = ['∂','∇','∫','ψ','ℏ','Σ','φ','γ','λ','ω','ρ','Ψ','Δ','Γ','∈','⊗','⟨','⟩','σ','μ','∞','⊕'];
+    const SYMS   = ['∂','∇','∫','ψ','ℏ','Σ','φ','λ','ω','ρ','Ψ','Δ','Γ','⊗','⟨','⟩','σ','μ'];
 
     function resize() {
       canvas.width  = window.innerWidth;
@@ -1084,18 +983,18 @@
         x:    Math.random() * canvas.width,
         y:    randomY ? Math.random() * canvas.height : canvas.height + 40,
         char: SYMS[Math.floor(Math.random() * SYMS.length)],
-        sz:   Math.random() * 30 + 12,
-        op:   Math.random() * 0.052 + 0.012,
-        vx:   (Math.random() - 0.5) * 0.22,
-        vy:   -(Math.random() * 0.18 + 0.04),
+        sz:   Math.random() * 20 + 10,
+        op:   Math.random() * 0.04 + 0.01,
+        vx:   (Math.random() - 0.5) * 0.2,
+        vy:   -(Math.random() * 0.15 + 0.05),
         rot:  Math.random() * Math.PI * 2,
-        vr:   (Math.random() - 0.5) * 0.001,
+        vr:   (Math.random() - 0.5) * 0.002,
         life: 0,
-        max:  Math.random() * 700 + 350
+        max:  Math.random() * 800 + 400
       };
     }
 
-    const P = Array.from({length: 52}, () => makeParticle(true));
+    const P = Array.from({length: 40}, () => makeParticle(true));
 
     function tick() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -1111,8 +1010,8 @@
         ctx.save();
         ctx.translate(p.x, p.y);
         ctx.rotate(p.rot);
-        ctx.font = `${p.sz}px 'Cormorant Garamond', serif`;
-        ctx.fillStyle = `rgba(196,148,86,${p.op * fade})`;
+        ctx.font = `${p.sz}px 'JetBrains Mono', monospace`;
+        ctx.fillStyle = `rgba(56, 189, 248, ${p.op * fade})`;
         ctx.fillText(p.char, 0, 0);
         ctx.restore();
       });
@@ -1133,11 +1032,11 @@
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
         if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('on'), i * 90);
+          setTimeout(() => e.target.classList.add('on'), i * 80);
           io.unobserve(e.target);
         }
       });
-    }, {threshold: 0.08, rootMargin: '0px 0px -30px 0px'});
+    }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
 
     document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
